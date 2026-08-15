@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bashar Kabbarah</title>
+<meta name="description" content="Bashar Kabbarah, EECS at UC Berkeley. ML research (MIT Media Lab) and engineering (literati.ai, BF AI).">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=7">
+</head>
+<body>
+
+<header class="top">
+  <div class="col top-row">
+    <span class="top-name">Bashar Kabbarah</span>
+    <nav class="top-links" aria-label="Links">
+      <a href="https://github.com/bkabbarah">GitHub</a>
+      <a href="https://linkedin.com/in/bashar-kabbarah">LinkedIn</a>
+      <a href="assets/resume.pdf">Resume</a>
+      <a href="#" class="email-obf" data-u="basharkabbarah" data-d="berkeley.edu">Email</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro col" data-io>
+    <div class="intro-grid">
+      <div>
+        <h1>EECS at UC Berkeley, class of&nbsp;2029.</h1>
+        <p>I work on machine learning research and the engineering around it, most recently tactile sensing at the MIT Media Lab and a real-time compilation engine at literati.ai.</p>
+        <p class="now mono">NOW: CS 189 · CS 170 · RECURSIVE SELF IMPROVEMENT LABS</p>
+      </div>
+      <img class="portrait" src="assets/portrait.jpg" width="800" height="1000" alt="Bashar Kabbarah">
+    </div>
+  </section>
+
+  <section class="work col" aria-label="Selected work">
+
+    <!-- 01 · MIT tactile -->
+    <article class="entry" data-io>
+      <div class="entry-head">
+        <span class="mono idx">01</span>
+        <div>
+          <h2>Tactile sensing for dexterous manipulation</h2>
+          <p class="mono meta">MIT MEDIA LAB · MULTISENSORY INTELLIGENCE · SUMMER 2026</p>
+        </div>
+      </div>
+      <div class="entry-grid">
+        <div class="entry-text">
+          <p>Extended a trimodal contrastive pipeline aligning a 169-taxel tactile glove, egocentric video, and hand pose. Touch alone predicts finger-motion direction <em>533&nbsp;ms ahead</em>, a signal provably not recoverable from hand kinematics.</p>
+          <p class="fine">Cross-modal retrieval mAP up 2.7x. First-author poster at the MIT Research Symposium.</p>
+        </div>
+        <figure class="demo demo-hand">
+          <model-viewer
+            id="hand-model"
+            src="https://opentouch-tactile.github.io/assets/models/hand_origin.glb"
+            alt="Interactive full-hand tactile sensor layout from the OpenTouch project"
+            camera-controls
+            disable-zoom
+            auto-rotate
+            auto-rotate-delay="1500"
+            touch-action="pan-y"
+            exposure="1.0"
+            environment-image="neutral"
+            loading="lazy">
+          </model-viewer>
+          <figcaption class="mono">
+            DRAG TO ROTATE · HAND MODEL FROM
+            <a href="https://opentouch-tactile.github.io/#examples">OPENTOUCH ↗</a>
+          </figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- 02 · machine olfaction -->
+    <article class="entry" data-io>
+      <div class="entry-head">
+        <span class="mono idx">02</span>
+        <div>
+          <h2>Machine olfaction rig</h2>
+          <p class="mono meta">MIT MEDIA LAB · KICAD / ESP32 / EMBEDDED C++ · SUMMER 2026</p>
+        </div>
+      </div>
+      <div class="entry-grid">
+        <div class="entry-text">
+          <p>A 25-sensor electronic nose on ESP32, streaming 20+ analog channels over dual I²C buses into a Python pipeline. <em>92% five-way substance ID</em> (97% with abstention) under leave-one-day-out CV across 205 runs.</p>
+          <p class="fine">Extended into a fabricated two-board PCB in KiCad with dedicated power regulation and reverse-polarity protection.</p>
+        </div>
+        <figure class="demo demo-nose">
+          <div class="nose-head mono">
+            <span>SENSOR ARRAY · 8 OF 25 CH</span>
+            <span class="nose-read" id="nose-read">BASELINE</span>
+          </div>
+          <canvas id="nose-canvas" height="180" aria-label="Animated gas sensor traces"></canvas>
+          <button class="demo-btn mono" id="nose-btn" type="button">INTRODUCE SUBSTANCE</button>
+        </figure>
+      </div>
+    </article>
+
+    <!-- 03 · literati -->
+    <article class="entry" data-io>
+      <div class="entry-head">
+        <span class="mono idx">03</span>
+        <div>
+          <h2><a class="entry-link" href="https://literati.ai">Real-time compilation engine</a></h2>
+          <p class="mono meta">RECURSIVE SELF IMPROVEMENT LABS · LITERATI.AI · AUG 2026 - PRESENT</p>
+        </div>
+      </div>
+      <div class="entry-grid">
+        <div class="entry-text">
+          <p>Built and benchmarked the streaming engine behind the platform's live preview. Pages render <em>~20x faster</em>, and preview updates dropped from 3-15&nbsp;s to under 2&nbsp;s.</p>
+          <p class="fine">Every release is gated by a correctness benchmark: 11,000+ edits verified byte-for-byte against ~40,000 reference compiles on a reproducible 6-machine fleet.</p>
+        </div>
+        <figure class="demo demo-compile">
+          <div class="compile-panes">
+            <div class="compile-pane">
+              <div class="pane-label mono">EDIT</div>
+              <pre class="mono" id="compile-src"></pre>
+            </div>
+            <div class="compile-pane">
+              <div class="pane-label mono">LIVE PREVIEW <span id="compile-timer" class="timer"></span></div>
+              <div id="compile-out" class="compile-out"></div>
+            </div>
+          </div>
+          <button class="demo-btn mono" id="compile-btn" type="button">REPLAY EDIT</button>
+          <figcaption class="mono">SIMULATION · THE REAL ENGINE RUNS AT <a href="https://literati.ai">LITERATI.AI ↗</a></figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- 04 · BF AI -->
+    <article class="entry" data-io>
+      <div class="entry-head">
+        <span class="mono idx">04</span>
+        <div>
+          <h2>AI defect inspection in production</h2>
+          <p class="mono meta">BF AI SEMICONDUCTOR SOLUTIONS · NAGOYA, JAPAN · JAN - JUN 2026</p>
+        </div>
+      </div>
+      <div class="entry-grid">
+        <div class="entry-text">
+          <p>Led production inspection systems for Tier-1 Japanese manufacturers (Ibiden, Canon, Kioxia): detection, classification, and segmentation models in PyTorch running in real time across <em>~20 inspection units</em>.</p>
+          <p class="fine">Including camera-to-robot coordinate transformation for closed-loop robotic integration.</p>
+        </div>
+        <figure class="demo demo-inspect">
+          <div class="nose-head mono">
+            <span>INSPECTION UNIT 07</span>
+            <span id="inspect-read">IDLE</span>
+          </div>
+          <svg id="inspect-svg" viewBox="0 0 420 240" role="img" aria-label="Simulated board inspection: move the pointer to scan for defects"></svg>
+          <figcaption class="mono">MOVE POINTER TO SCAN</figcaption>
+        </figure>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- more -->
+  <section class="more col" data-io>
+    <h2 class="more-title mono">ALSO</h2>
+    <ul class="more-list">
+      <li>
+        <span>UC Berkeley DNA Sequencing Facility: automated an Oxford Nanopore pipeline, cutting operator time 95%; SLURM orchestration on Savio HPC.</span>
+        <span class="mono">2025</span>
+      </li>
+      <li>
+        <span>Co-author, <a href="https://emerginginvestigators.org/articles/25-135">Journal of Emerging Investigators</a>: deep learning for cervical spine X-ray classification at 95.73% accuracy; presented at SCCUR.</span>
+        <span class="mono">2026</span>
+      </li>
+      <li>
+        <span>Regents' &amp; Chancellor's Scholar · SEED Honors Scholar · National Merit Scholar.</span>
+        <span class="mono">UCB</span>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="col foot" data-io>
+    <a class="foot-mail email-obf" href="#" data-u="basharkabbarah" data-d="berkeley.edu">basharkabbarah [at] berkeley [dot] edu</a>
+    <div class="foot-row mono">
+      <span>© 2026 BASHAR KABBARAH</span>
+      <span>
+        <a href="https://github.com/bkabbarah">GITHUB</a> ·
+        <a href="https://linkedin.com/in/bashar-kabbarah">LINKEDIN</a> ·
+        <a href="assets/resume.pdf">RESUME</a>
+      </span>
+    </div>
+  </footer>
+
+</main>
+
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script src="js/main.js?v=6"></script>
+</body>
+</html>
